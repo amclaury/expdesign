@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon"
+    type="image/png"
+    href="http://sulley.cah.ucf.edu/~an874884/expdesign/img/brfav.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Star Trek Attack Wing: Undiscovered Species</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=BenchNine:700" rel="stylesheet">
+	<link rel="stylesheet" href="map/leaflet.css" />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/leaflet.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body onload="init1(); init2(); init3(); init4();">
+  
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<h1>STAR TREK ATTACK WING: UNDISCOVERED SPECIES</h1>
+		</div>
+</nav>
+	<div class="background"></div>
+		<div class="planets">
+			<div class="breen1">
+   		 <div class="breen2" data-toggle="modal" data-target="#BreenModal"></div>
+		 </div> 
+			<div class="tholian1">
+   		 <div class="tholian2" data-toggle="modal" data-target="#TholianModal"></div>
+		</div>
+		<br>
+			<div class="kzinti1">
+   		 <div class="kzinti2" data-toggle="modal" data-target="#KzintiModal"></div>
+		</div>
+			<div class="malon1">
+   		 <div class="malon2" data-toggle="modal" data-target="#MalonModal"></div>
+		</div>
+		</div>
+		
+		<div id="BreenModal" class="modal">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body" id="map"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-warning" ><a href="pdf/BreenCards.pdf" download>Download PDF</a></button>
+    </div>
+  </div>
+</div>
+</div>
+	<script>
+	  var layer;
+	  var layer2;
+	  var layer3;
+	  var layer4;
+function init1() {
+        var mapMinZoom = 3;
+        var mapMaxZoom = 6;
+        var map = L.map('map', {
+          maxZoom: mapMaxZoom,
+          minZoom: mapMinZoom,
+          crs: L.CRS.Simple
+        }).setView([3456, 4736], mapMaxZoom);
+        
+        var mapBounds = new L.LatLngBounds(
+            map.unproject([0, 9472], mapMaxZoom),
+            map.unproject([6912, 0], mapMaxZoom));
+            
+        map.fitBounds(mapBounds);
+        layer = L.tileLayer('map/{z}/{x}/{y}.png', {
+          minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+          bounds: mapBounds,
+          noWrap: true,
+          tms: false
+        }).addTo(map);
+		$('#BreenModal').on('show.bs.modal', function(){
+  setTimeout(function() {
+    map.invalidateSize();
+  }, 10);
+ });
+      }
+	  
+      function init2() {
+        var mapMinZoom = 3;
+        var mapMaxZoom = 6;
+        var map2 = L.map('map2', {
+          maxZoom: mapMaxZoom,
+          minZoom: mapMinZoom,
+          crs: L.CRS.Simple
+        }).setView([3456, 4736], mapMaxZoom);
+        
+        var mapBounds = new L.LatLngBounds(
+            map2.unproject([0, 9472], mapMaxZoom),
+            map2.unproject([6912, 0], mapMaxZoom));
+            
+        map2.fitBounds(mapBounds);
+        layer2 = L.tileLayer('map2/{z}/{x}/{y}.png', {
+          minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+          bounds: mapBounds,
+          noWrap: true,
+          tms: false
+        }).addTo(map2);
+	$('#TholianModal').on('show.bs.modal', function(){
+  setTimeout(function() {
+    map2.invalidateSize();
+  }, 10);
+ });
+      }
+	  
+      function init3() {
+        var mapMinZoom = 2;
+        var mapMaxZoom = 6;
+        var map3 = L.map('map3', {
+          maxZoom: mapMaxZoom,
+          minZoom: mapMinZoom,
+          crs: L.CRS.Simple
+        }).setView([2304, 3200], mapMaxZoom);
+        
+        var mapBounds3 = new L.LatLngBounds(
+            map3.unproject([0, 14208], mapMaxZoom),
+            map3.unproject([10368, 0], mapMaxZoom));
+            
+        map3.fitBounds(mapBounds3);
+        layer3 = L.tileLayer('map3/{z}/{x}/{y}.png', {
+          minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+          bounds: mapBounds3,
+          noWrap: true,
+          tms: false
+        }).addTo(map3);
+		$('#KzintiModal').on('show.bs.modal', function(){
+  setTimeout(function() {
+    map3.invalidateSize();
+  }, 10);
+ });
+      }
+	  
+      function init4() {
+        var mapMinZoom = 2;
+        var mapMaxZoom = 6;
+        var map4 = L.map('map4', {
+          maxZoom: mapMaxZoom,
+          minZoom: mapMinZoom,
+          crs: L.CRS.Simple
+        }).setView([2304, 3200], mapMaxZoom);
+        
+        var mapBounds4 = new L.LatLngBounds(
+            map4.unproject([0, 14208], mapMaxZoom),
+            map4.unproject([10368, 0], mapMaxZoom));
+            
+        map4.fitBounds(mapBounds4);
+        layer4 = L.tileLayer('map4/{z}/{x}/{y}.png', {
+          minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+          bounds: mapBounds4,
+          noWrap: true,
+          tms: false
+        }).addTo(map4);
+	$('#MalonModal').on('show.bs.modal', function(){
+  setTimeout(function() {
+    map4.invalidateSize();
+  }, 10);
+ });
+      }
+	  
+</script>
+		
+		<div id="TholianModal" class="modal">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body" id="map2"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-warning" ><a href="pdf/TholianCards.pdf" download>Download PDF</a></button>
+    </div>
+  </div>
+</div>
+</div>
+
+		<div id="KzintiModal" class="modal">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body" id="map3"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-warning" ><a href="pdf/KzintiCards.pdf" download>Download PDF</a></button>
+    </div>
+  </div>
+</div>
+</div>
+
+		<div id="MalonModal" class="modal">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body" id="map4"></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-warning" ><a href="pdf/MalonCards.pdf" download>Download PDF</a></button>
+    </div>
+  </div>
+</div>
+</div>
+		
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<p>This project is a series of fan-created cards for the board game <i><a href="http://wizkids.com/attackwing/star-trek-attack-wing/">Star Trek: Attack Wing</a></i>. <br>
+			Imagery obtained from <a href="http://memory-alpha.wikia.com/wiki/Portal:Main">Memory Alpha</a> and the <a href="http://sto.gamepedia.com/Main_Page">Star Trek Online Wiki</a></p>
+		</div>
+</nav>
+	
+  </body>
+  
+  </html>
+

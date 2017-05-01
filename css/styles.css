@@ -1,4 +1,162 @@
 body {
 	background-color: #000000;
-	background-image: url("img/starfield.gif");
+	font-family: 'BenchNine', sans-serif;
+	color: #ffffff;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
+.planets {
+	margin: auto;
+}
+.background {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	opacity: 0.15;
+	background-image: url("../img/starfield.gif");
+}
+h1 {
+	font-size: 40px;
+	padding: 5px;
+	z-index:1000;
+	text-align: center;
+	display: block;
+	margin: auto;
+}
+.breen1 {
+	width: 415px;
+	height: 190px;
+	position: relative;
+	background-image: url("../img/bre.png");
+	display: inline-block;
+}
+.breen2 {
+	width: 415px;
+	height: 190px;
+	position: absolute;
+	background-image: url("../img/bre_hover.png");
+	opacity: 0;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+	display: inline-block;
+}
+.breen2:hover {
+	opacity: 1;
+}
+.tholian1 {
+	width: 415px;
+	height: 190px;
+	position: relative;
+	background-image: url("../img/tho.png");
+	display: inline-block;
+}
+.tholian2 {
+	width: 415px;
+	height: 190px;
+	position: absolute;
+	background-image: url("../img/tho_hover.png");
+	opacity: 0;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+	display: inline-block;
+}
+.tholian2:hover {
+	opacity: 1;
+}
+.kzinti1 {
+	width: 415px;
+	height: 190px;
+	position: relative;
+	background-image: url("../img/kzi.png");
+	display: inline-block;
+}
+.kzinti2 {
+	width: 415px;
+	height: 190px;
+	position: absolute;
+	background-image: url("../img/kzi_hover.png");
+	opacity: 0;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+	display: inline-block;
+}
+.kzinti2:hover {
+	opacity: 1;
+}
+.malon1 {
+	width: 415px;
+	height: 190px;
+	position: relative;
+	background-image: url("../img/mal.png");
+	display: inline-block;
+}
+.malon2 {
+	width: 415px;
+	height: 190px;
+	position: absolute;
+	background-image: url("../img/mal_hover.png");
+	opacity: 0;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+	display: inline-block;
+}
+.malon2:hover {
+	opacity: 1;
+}
+.planets {
+	display: block;
+	margin: auto;
+	padding: 50px 0px 0px 0px;
+	width: 835px;
+}
+.navbar {
+	background-color: #414e66;
+}
+p {
+	text-align: center;
+	margin: auto;
+	font-size: 18px;
+}
+
+p a {
+	color: #f0abf5;
+}
+
+p a:hover {
+	color: #ee6ef6;
+	text-decoration: none;
+}
+
+#map {
+	min-height: 400px;
+	height: 80%;
+	width: 100%;
+}
+
+#map2 {
+	height: 400px;
+	width: 100%;
+}
+
+#map3 {
+	height: 400px;
+	width: 100%;
+}
+
+#map4 {
+	height: 400px;
+	width: 100%;
+}
+
+.modal.dialog {
+     width: 80%;
+}
+.modal-header {
+    background-color: #414e66;
+ }
+.modal-content {
+    background-color: #222222;
+ }
+.modal-footer {
+    background-color: #414e66;
+ }
