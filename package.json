@@ -1,0 +1,19 @@
+{
+  "name": "expdesign",
+  "version": "1.0.0",
+  "description": "Second Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amclaury/expdesign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amclaury/expdesign/issues"
+  },
+  "homepage": "https://github.com/amclaury/expdesign#readme"
+}
